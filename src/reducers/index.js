@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import PhotoReducer from './reducer-photo';
+
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  photos: PhotoReducer
 });
 
 export default rootReducer;

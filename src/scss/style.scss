@@ -1,0 +1,18 @@
+body{
+  background: cornSilk;
+  .list-container{
+    height: 120px;
+    .image-col{
+      border: 2px solid silver;
+      height: 100%;
+    }
+    .list-info{
+      @extend .list-container;
+
+    }
+  }
+  h3, h5, h6, p {
+    padding: 0;
+    margin: 0;
+  }
+}

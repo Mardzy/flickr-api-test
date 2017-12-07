@@ -11,10 +11,11 @@ class SearchBar extends Component{
       term: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e){
-    // console.log(e.target.value);
+    console.log(e.target.value);
     this.setState({
       term: e.target.value
     });
@@ -23,9 +24,8 @@ class SearchBar extends Component{
   handleSubmit(e){
     e.preventDefault();
     //we need to go and fetch flickr data
-    this.props.fetchPhoto(this.state.term,)
+    this.props.fetchPhoto(this.state.term);
     this.setState({term: ''});
-
   }
 
   render(){
