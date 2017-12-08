@@ -19,7 +19,7 @@ class SearchBar extends Component{
   }
 
   handleChange(e){
-    console.log('change',e.target.value);
+    // console.log('change',e.target.value);
     this.setState({
       tags: e.target.value
     });
@@ -47,11 +47,11 @@ class SearchBar extends Component{
       perPage: this.state.perPage,
       page: this.state.page
     });
-    console.log('submit', this.state);
+    // console.log('submit', this.state);
   }
 
   render(){
-    const {tags, page, perPage} = this.state;
+    const {tags/*, page, perPage*/} = this.state;
     return(
       <form
         onSubmit={this.handleSubmit}

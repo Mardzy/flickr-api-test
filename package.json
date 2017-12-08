@@ -13,6 +13,7 @@
     "babel-preset-stage-1": "^6.1.18",
     "bootstrap": "4.0.0-beta.2",
     "flickrapi": "^0.6.0",
+    "moment": "^2.19.3",
     "npm-check": "^5.5.2",
     "react": "16.2.0",
     "react-dom": "16.2.0",
