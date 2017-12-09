@@ -15,7 +15,7 @@ export function fetchPhoto(tag, perPage, page){
     content_type: 1,
     parse_tags: 1,
     sort: 'relevance',
-    extras: 'description,date_taken,owner_name,url_m',
+    extras: 'description,date_taken,owner_name,tags,url_m',
     per_page: 5,
     page: page,
     reqId: 'f866abd5'

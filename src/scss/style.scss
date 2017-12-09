@@ -1,38 +1,74 @@
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 375px,
+  sm: 544px,
+  md: 801px,
+  lg: 802px,
+  xl: 1200px
+) !important;
+
 body{
-  background: cornSilk;
-  .list-container{
-    height: 120px;
-    .image-col{
-      border: 2px solid silver;
-      height: 100%;
-    }
-    .list-info{
-      @extend .list-container;
+  background: rgb(136, 194, 244);
 
-    }
-  }
-  h3, h5, a {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .container-fluid{
     width: 100%;
-    content: '&hellip;'
-  }
-  form{
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
+    margin: 0;
+    padding: 0;
 
-    select{
-      width: 100px;
+    main{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      .photo-container{
+        width: 100%;
+      }
+      .list-container{
+        height: 150px;
+        width: 100%;
+        border-bottom: .5px solid lightGray;
+        .image-col{
+          height: 100%;
+        }
+        .col-sm-10{
+          display: flex;
+          justify-content: center;
+          .list-info{
+            @extend .list-container;
+            width: 100%;
+
+
+          }
+        }
+      }
+      h2, h5, a {
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        content: '&hellip;'
+      }
+      form.input-group{
+        align-self: center;
+        margin: 25px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 70%;
+
+
+        select{
+          width: 100px;
+        }
+      }
     }
   }
 }
 .input-group .form-control, select#per-page{
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 .photo-container{
@@ -41,6 +77,29 @@ body{
 }
 img{
   width: 100%;
-  height: 120px;
+  height: 100%;
   object-fit:cover;
+}
+
+@media only screen and (max-width: 801px) {
+  #title{
+    // flex:1;
+    order:-3
+  }
+  #date{
+    order: -2;
+    padding: 0;
+  }
+  #owner{
+    order: 0;
+  }
+  #photo-links{
+    order: 3;
+  }
+  h6{
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+
 }
