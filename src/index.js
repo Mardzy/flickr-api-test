@@ -14,12 +14,14 @@ import './scss/style.scss';
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
+
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <Switch>
         <Route path="/photos/:id" component={PhotoShow} />
-        <Route path="/" component={PhotoIndex} />
+        <Route exact path="/" component={PhotoIndex} />
       </Switch>
     </BrowserRouter>
   </Provider>
+
   , document.querySelector('.container-fluid'));

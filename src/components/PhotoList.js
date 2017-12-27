@@ -1,8 +1,17 @@
 import React from 'react';
+import moment from 'moment';
 import {Link} from 'react-router-dom';
 
-const PhotoList = ({item, titleString, userUrl, ownerString, dateString, photoUrl, handleClick}) => {
-  console.log('photoList', item);
+const PhotoList = ({
+  item, handleClick, index
+}) => {
+  const userUrl = `https://www.flickr.com/people/${item.owner}`,
+    photoUrl = `https://www.flickr.com/photo/${item.owner}/${item.id}`,
+    length = 80,
+    titleString = item.title.length > length? item.title.substring(0, length) + '...' :item.title,
+    ownerString = item.ownername.substring(0, length),
+    dateString = moment(item.datetaken).format('Do MMM YYYY [at] h:mm');
+
   return(
     <div className="row list-container">
       <Link
@@ -42,8 +51,8 @@ const PhotoList = ({item, titleString, userUrl, ownerString, dateString, photoUr
             className="col-lg-2 col-sm-3 my-auto" href={photoUrl}><h6>View on flickr</h6></a>
         </div>
       </div>
-
-    </div>);
+    </div>
+  );
 };
 
 export default PhotoList;

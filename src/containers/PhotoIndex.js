@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
-import moment from 'moment';
 import PhotoList from '../components/PhotoList';
 import PhotoSearch from '../components/PhotoSearch';
 import {fetchPhotos} from '../actions';
@@ -34,38 +33,24 @@ class PhotoIndex extends Component {
   }
 
   renderPhotos(){
-    // console.log('renderPhoto',this.props.photos );
-    // if(!photoData){
-    //   return(<div>Loading...</div>);
-    // }
+
     return ( _.map(this.props.photos, photo =>{
-      console.log('items', photo);
-      const userUrl = `https://www.flickr.com/people/${photo.owner}`,
-        photoUrl = `https://www.flickr.com/photo/${photo.owner}/${photo.id}`,
-        length = 80,
-        titleString = photo.title.length > length? photo.title.substring(0, length) + '...' :photo.title,
-        ownerString = photo.ownername.substring(0, length),
-        dateString = moment(photo.datetaken).format('Do MMM YYYY [at] h:mm');
+      // console.log('items', photo);
       return(
         <main
           key={photo.id}
           className="photo-container"
         >
-
           <PhotoList
             item={photo}
-            titleString={titleString}
-            userUrl={userUrl}
-            ownerString={ownerString}
-            dateString={dateString}
-            photoUrl={photoUrl}
+            index={true}
           />
         </main>);
     }));
   }
 
   render(){
-    console.log(this.props.photos);
+    // console.log(this.props.photos);
     return(
       <section>
         <PhotoSearch
