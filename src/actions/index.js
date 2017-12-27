@@ -29,15 +29,15 @@ export function fetchPhotos(tag){
     payload: request
   };
 }
-
-export const FETCH_PHOTO = 'FETCH_PHOTO';
-export function fetchPhoto(id){
-
-  const url = `${ROOT_URL}method=${qs.getInfo_method}&api_key=${qs.api_key}&photo_id=${id}&format=${qs.format}&nojsoncallback=1`;
-
-  const request = Axios.get(url);
-  return{
-    type: FETCH_PHOTO,
-    payload: request
-  };
-}
+//
+// export const FETCH_PHOTO = 'FETCH_PHOTO';
+// export function fetchPhoto(id){
+//
+//   const url = `${ROOT_URL}method=${qs.getInfo_method}&api_key=${qs.api_key}&photo_id=${id}&format=${qs.format}&nojsoncallback=1`;
+//
+//   const request = Axios.get(url);
+//   return{
+//     type: FETCH_PHOTO,
+//     payload: request
+//   };
+// }

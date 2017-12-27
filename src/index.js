@@ -14,7 +14,6 @@ import './scss/style.scss';
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
-
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <Switch>
@@ -22,6 +21,6 @@ ReactDOM.render(
         <Route exact path="/" component={PhotoIndex} />
       </Switch>
     </BrowserRouter>
-  </Provider>
-
-  , document.querySelector('.container-fluid'));
+  </Provider>,
+  document.querySelector('.container-fluid')
+);

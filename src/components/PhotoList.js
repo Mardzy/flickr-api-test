@@ -3,7 +3,7 @@ import moment from 'moment';
 import {Link} from 'react-router-dom';
 
 const PhotoList = ({
-  item, handleClick, index
+  item, handleClick
 }) => {
   const userUrl = `https://www.flickr.com/people/${item.owner}`,
     photoUrl = `https://www.flickr.com/photo/${item.owner}/${item.id}`,
